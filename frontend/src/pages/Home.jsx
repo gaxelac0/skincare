@@ -1,13 +1,22 @@
 import * as React from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, useDisclosure } from "@chakra-ui/react";
 
 import SkinCareBanner from "../components/framework/SkinCareBanner";
 import ProductsSearchBanner from "../components/framework/ProductSearchBanner";
 import RutinesBanner from "../components/framework/RutinesBanner";
 import ProductsOfMonth from "../components/framework/ProductsOfMonth";
 import PopularProducts from "../components/framework/PopularProducts";
+import SkinTypeModal from "../components/framework/SkinTypeModal";
 
 export function Home() {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  React.useEffect(() => {
+    const isFirstOpen = !window.localStorage.getItem("hasUser");
+    if (isFirstOpen) onOpen();
+    window.localStorage.setItem("hasUser", true);
+  }, []);
+
   return (
     <>
       <Grid
@@ -28,6 +37,11 @@ export function Home() {
           <ProductsOfMonth />
         </GridItem>
       </Grid>
+      <SkinTypeModal
+        openModal={onOpen}
+        isModalOpen={isOpen}
+        closeModal={onClose}
+      />
     </>
   );
 }

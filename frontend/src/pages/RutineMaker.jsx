@@ -15,13 +15,13 @@ import {
 } from "@chakra-ui/react";
 
 export function RutineMaker() {
-  const [showExfoliante, setShowExfoliante] = React.useState(true);
+  const [showExfoliante, setShowExfoliante] = React.useState(false);
   const [showHumectante, setShowHumectante] = React.useState(true);
   const [showLimpiador, setShowLimpiador] = React.useState(true);
-  const [showProtector, setShowProtector] = React.useState(true);
+  const [showProtector, setShowProtector] = React.useState(false);
   const [showSerum, setShowSerum] = React.useState(true);
-  const [showAntiage, setShowAntiage] = React.useState(true);
-  const [showImperfecciones, setShowImperfecciones] = React.useState(true);
+  const [showAntiage, setShowAntiage] = React.useState(false);
+  const [showImperfecciones, setShowImperfecciones] = React.useState(false);
 
   React.useEffect(() => {
     getRutine();
@@ -45,7 +45,7 @@ export function RutineMaker() {
   return (
     <>
       <Container maxWidth="6xl" centerContent>
-        <Box border={"1px solid #fff"} borderRadius={10} padding={5}>
+        <Box border={"1px solid #E2AFBE"} borderRadius={10} padding={5}>
           Debajo veras todas las categorias de productos que te podemos ofrecer.
           Dentro de cada una veras los diferentes productos en una escala de
           color. Elige todos los productos{" "}
@@ -66,50 +66,46 @@ export function RutineMaker() {
         <Heading>Selecciona tus categorias</Heading>
         <Stack spacing={5} direction="row" marginTop={10}>
           <Checkbox
-            colorScheme="blue"
-            defaultChecked
+            colorScheme="pink"
             onChange={() => setShowExfoliante(!showExfoliante)}
           >
             Exfoliante
           </Checkbox>
           <Checkbox
-            colorScheme="blue"
+            colorScheme="pink"
             defaultChecked
             onChange={() => setShowHumectante(!showHumectante)}
           >
             Humectante
           </Checkbox>
           <Checkbox
-            colorScheme="blue"
+            colorScheme="pink"
             defaultChecked
             onChange={() => setShowSerum(!showSerum)}
           >
             Serum
           </Checkbox>
           <Checkbox
-            colorScheme="blue"
+            colorScheme="pink"
             defaultChecked
             onChange={() => setShowLimpiador(!showLimpiador)}
           >
             Limpiador
           </Checkbox>
           <Checkbox
-            colorScheme="blue"
-            defaultChecked
+            colorScheme="pink"
             onChange={() => setShowProtector(!showProtector)}
           >
             Protector Solar
           </Checkbox>
           <Checkbox
-            colorScheme="blue"
-            defaultChecked
+            colorScheme="pink"
             onChange={() => setShowAntiage(!showAntiage)}
           >
             Antiage
           </Checkbox>
           <Checkbox
-            colorScheme="blue"
-            defaultChecked
+            colorScheme="pink"
             onChange={() => setShowImperfecciones(!showImperfecciones)}
           >
             Anti imperfecciones
@@ -125,11 +121,13 @@ export function RutineMaker() {
           {/* Exfoliante */}
           <GridItem
             colSpan={1}
-            bgColor={"#303e95"}
+            bgColor={"#E2AFBE"}
             height={"100%"}
             textAlign="center"
             hidden={!showExfoliante}
             width={"200px"}
+            borderRadius={10}
+            padding={2}
           >
             <Heading size={"md"}>Exfoliante</Heading>
             <VStack margin={2}>
@@ -149,11 +147,13 @@ export function RutineMaker() {
           {/* Humectante */}
           <GridItem
             colSpan={1}
-            bgColor={"#303e95"}
+            bgColor={"#E2AFBE"}
             height={"100%"}
             textAlign="center"
             hidden={!showHumectante}
             width={"200px"}
+            borderRadius={10}
+            padding={2}
           >
             <Heading size={"md"}>Humectante</Heading>
             <VStack margin={2}>
@@ -165,11 +165,13 @@ export function RutineMaker() {
           {/* Serum */}
           <GridItem
             colSpan={1}
-            bgColor={"#303e95"}
+            bgColor={"#E2AFBE"}
             height={"100%"}
             textAlign="center"
             hidden={!showSerum}
             width={"200px"}
+            borderRadius={10}
+            padding={2}
           >
             <Heading size={"md"}>Serum</Heading>
             <VStack margin={2}>
@@ -200,11 +202,13 @@ export function RutineMaker() {
           {/* Limpiador */}
           <GridItem
             colSpan={1}
-            bgColor={"#303e95"}
+            bgColor={"#E2AFBE"}
             height={"100%"}
             textAlign="center"
             hidden={!showLimpiador}
             width={"200px"}
+            borderRadius={10}
+            padding={2}
           >
             <Heading size={"md"}>Limpiador</Heading>
             <VStack margin={2}>
@@ -220,11 +224,13 @@ export function RutineMaker() {
           {/* Protector Solar */}
           <GridItem
             colSpan={1}
-            bgColor={"#303e95"}
+            bgColor={"#E2AFBE"}
             height={"100%"}
             textAlign="center"
             hidden={!showProtector}
             width={"200px"}
+            borderRadius={10}
+            padding={2}
           >
             <Heading size={"md"}>Protector Solar</Heading>
             <VStack margin={2}>
@@ -244,11 +250,13 @@ export function RutineMaker() {
           {/* Antiage */}
           <GridItem
             colSpan={1}
-            bgColor={"#303e95"}
+            bgColor={"#E2AFBE"}
             height={"100%"}
             textAlign="center"
             hidden={!showAntiage}
             width={"200px"}
+            borderRadius={10}
+            padding={2}
           >
             <Heading size={"md"}>Antiage</Heading>
             <VStack margin={2}>
@@ -266,11 +274,13 @@ export function RutineMaker() {
           {/* Anti imperfecciones */}
           <GridItem
             colSpan={1}
-            bgColor={"#303e95"}
+            bgColor={"#E2AFBE"}
             height={"100%"}
             textAlign="center"
             hidden={!showImperfecciones}
             width={"200px"}
+            borderRadius={10}
+            padding={2}
           >
             <Heading size={"md"}>Anti Imperfecciones</Heading>
             <VStack margin={2}>
@@ -280,7 +290,7 @@ export function RutineMaker() {
             </VStack>
           </GridItem>
         </Grid>
-        <Button marginTop={10} colorScheme={"blue"}>
+        <Button marginTop={10} bgColor={"#E2AFBE"}>
           Crear rutina
         </Button>
       </Container>
